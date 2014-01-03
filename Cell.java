@@ -13,7 +13,6 @@ public class Cell {
 
     public Cell(Coordinate pos) {
         this.pos = pos;
-//        figure = new
     }
 
     public void setFigure(Figure figure) {

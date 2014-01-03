@@ -12,14 +12,14 @@ public abstract class Player {
     private Figure figure;
     private Field field;
 
-    public Player (String name, Figure figure, Field field) {
+    public Player(String name, Figure figure, Field field) {
         this.name = name;
         this.figure = figure;
         this.field = field;
     }
 
-    public String getName () {
-        return  name;
+    public String getName() {
+        return name;
     }
 
     public Figure getFigure() {
@@ -29,7 +29,13 @@ public abstract class Player {
     public Field getField() {
         return field;
     }
-    public void move (Coordinate stroke) {
-        getField().setFigure(stroke, getFigure());;
+
+    public void move(Coordinate stroke) throws InputCellBusyException {
+//        try {
+        getField().setFigure(stroke, getFigure());
+//        } catch (InputCellBusyException e) {
+//            throw new InputCellBusyException(e.getMessage());
+//        }
+
     }
 }

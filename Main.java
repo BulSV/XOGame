@@ -21,7 +21,12 @@ public class Main {
         System.out.println("Введите имя второго игрока");
         player2Name = scan.next();
 
-        XOGame xoGame = XOGame.startNewGame(player1Name, player2Name);
+        XOGame xoGame = null;
+        try {
+            xoGame = XOGame.startNewGame(player1Name, player2Name);
+        } catch (InputNameException e) {
+            e.printStackTrace();
+        }
 //        XOGame xoGame = XOGame.startNewGame(player1Name);
 
         System.out.println();
@@ -47,7 +52,11 @@ public class Main {
         int pos = scanner.nextInt();
         try {
             player.move(fieldTranslator.getCoordinates(pos));
-        } catch (Exception e) {
+        } catch (InputCellRangeException e) {
+            System.out.println("Ошибка!\nВведите номер поля в диапазоне от 1 до 9 включительно");
+            inputPos(player);
+        } catch (InputCellBusyException e) {
+            System.out.println("Ошибка!\nПоле занято! Введите другой номер поля");
             inputPos(player);
         }
     }

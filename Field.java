@@ -34,11 +34,11 @@ public abstract class Field {
 
     public abstract void reDraw();
 
-    public void setFigure(Coordinate pos, Figure figure) {
+    public void setFigure(Coordinate pos, Figure figure) throws InputCellBusyException {
         if (isCellEmpty(pos)) {
             cells[pos.getI()][pos.getJ()].setFigure(figure);
         } else {
-            System.out.println("Занято!!!");
+            throw new InputCellBusyException("Занято!");
         }
     }
 }

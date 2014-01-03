@@ -44,12 +44,11 @@ public class FieldTranslator {
         return height;
     }
 
-    // TODO: как обработать неправильный ввод
-    public Coordinate getCoordinates(int pos) throws Exception {
+    public Coordinate getCoordinates(int pos) throws InputCellRangeException {
         if ((pos >= 1) && (pos <= cells)) {
             return coordinates[pos - 1];
         } else {
-            throw new Exception("Неправильный ввод координаты");
+            throw new InputCellRangeException("Неправильный ввод координаты");
         }
     }
 }
