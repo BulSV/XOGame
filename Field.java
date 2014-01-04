@@ -1,5 +1,7 @@
 package com.XOGame;
 
+import com.XOGame.exceptions.InputCellBusyException;
+
 /**
  * Created with IntelliJ IDEA.
  * User: sergey

@@ -1,10 +1,10 @@
-package com.XOGame;
+package com.XOGame.exceptions;
 
 /**
  * Created by sergey on 03.01.14.
  */
 public class InputNameException extends Exception {
-    InputNameException(String message) {
+    public InputNameException(String message) {
         super(message);
     }
 }

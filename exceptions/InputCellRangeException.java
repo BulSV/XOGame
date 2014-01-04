@@ -1,4 +1,4 @@
-package com.XOGame;
+package com.XOGame.exceptions;
 
 /**
  * Created by sergey on 03.01.14.

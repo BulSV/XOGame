@@ -1,6 +1,9 @@
 package com.XOGame;
 
-import java.io.IOException;
+import com.XOGame.exceptions.InputCellBusyException;
+import com.XOGame.exceptions.InputCellRangeException;
+import com.XOGame.exceptions.InputNameException;
+
 import java.util.Scanner;
 
 /**
@@ -13,21 +16,38 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+        PVPorPVC pvporpvc = null;
         String player1Name = null;
         String player2Name = null;
-
-        System.out.println("Введите имя первого игрока");
-        player1Name = scan.next();
-        System.out.println("Введите имя второго игрока");
-        player2Name = scan.next();
-
+        XorO xOrO = null;
         XOGame xoGame = null;
-        try {
-            xoGame = XOGame.startNewGame(player1Name, player2Name);
-        } catch (InputNameException e) {
-            e.printStackTrace();
+
+        while (true) {
+            System.out.println("Выберите с кем играть:\nС человеком - PVP\nС компьютером - PVC");
+            pvporpvc = PVPorPVC.valueOf(scan.next().toUpperCase());
+            System.out.println("Введите имя игрока");
+            player1Name = scan.next();
+            System.out.println("Крестиками или ноликами?");
+            xOrO = XorO.valueOf(scan.next().toUpperCase());
+            if (pvporpvc == PVPorPVC.PVP) {
+                System.out.println("Введите имя второго игрока");
+                player2Name = scan.next();
+            }
+
+
+            try {
+                if (pvporpvc == PVPorPVC.PVP) {
+                    xoGame = XOGame.startNewGame(player1Name, player2Name, xOrO);
+                } else {
+                    xoGame = XOGame.startNewGame(player1Name, xOrO);
+                }
+            } catch (InputNameException e) {
+                System.out.println("Ошибка!\nВведено не правильное имя!");
+                System.out.println("Прийдётся из-за " + e.getMessage() + " вводить имена заново");
+                continue;
+            }
+            break;
         }
-//        XOGame xoGame = XOGame.startNewGame(player1Name);
 
         System.out.println();
 

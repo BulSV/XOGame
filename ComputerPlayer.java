@@ -9,8 +9,22 @@ package com.XOGame;
  */
 public class ComputerPlayer extends Player {
     private static final String NAME = "Computer";
+    private String name = NAME;
 
     public ComputerPlayer (Figure figure, Field field) {
         super(NAME, figure, field);
+    }
+
+    public ComputerPlayer(String name, Figure figure, Field field) {
+        super(name, figure, field);
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
