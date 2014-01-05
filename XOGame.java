@@ -32,12 +32,12 @@ public class XOGame {
                 new HumanPlayer(xOrO == XorO.X ? player2 : player1, new ConsoleOFigure(), field));
     }
 
-    public static XOGame startNewGame(String player1, XorO xOrO) throws InputNameException{
+    public static XOGame startNewGame(String player, XorO xOrO) throws InputNameException{
         Field field = new ConsoleField();
-        return new XOGame(xOrO == XorO.X ? new HumanPlayer(player1, new ConsoleXFigure(), field) :
+        return new XOGame(xOrO == XorO.X ? new HumanPlayer(player, new ConsoleXFigure(), field) :
                 new ComputerPlayer(new ConsoleXFigure(), field),
                 xOrO == XorO.X ? new ComputerPlayer(new ConsoleOFigure(), field) :
-                        new HumanPlayer(player1, new ConsoleOFigure(), field));
+                        new HumanPlayer(player, new ConsoleOFigure(), field));
     }
 
     public Field getField() {

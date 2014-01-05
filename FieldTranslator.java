@@ -12,11 +12,11 @@ import com.XOGame.exceptions.InputCellRangeException;
 public class FieldTranslator {
     private static final int WIDTH = 3;
     private static final int HEIGHT = 3;
-    private static final int CELLS = WIDTH * HEIGHT;
+//    private static final int CELLS = WIDTH * HEIGHT;
 
     private int width = WIDTH;
     private int height = HEIGHT;
-    private int cells = CELLS;
+    private int cells = width * height;
     private Coordinate[] coordinates = new Coordinate[cells];
 
     private void fillBoard() {
@@ -28,9 +28,11 @@ public class FieldTranslator {
         }
     }
 
-    public FieldTranslator(int width, int height) {
+    public FieldTranslator(int height, int width) {
         this.width = width;
         this.height = height;
+        cells = width * height;
+        coordinates = new Coordinate[cells];
         fillBoard();
     }
 
@@ -38,12 +40,8 @@ public class FieldTranslator {
         this(WIDTH, HEIGHT);
     }
 
-    public int getWidth() {
-        return width;
-    }
-
-    public int getHeight() {
-        return height;
+    public Coordinate getDim() {
+        return new Coordinate(height, width);
     }
 
     public Coordinate getCoordinates(int pos) throws InputCellRangeException {

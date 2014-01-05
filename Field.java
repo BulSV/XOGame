@@ -10,23 +10,34 @@ import com.XOGame.exceptions.InputCellBusyException;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class Field {
-    protected int HEIGHT = 3;
-    protected int WIDTH = 3;
-    protected Cell[][] cells = new Cell[WIDTH][HEIGHT];
+    private int HEIGHT = 3;
+    private int WIDTH = 3;
+    private int height = HEIGHT;
+    private int width = WIDTH;
+    private Cell[][] cells = new Cell[height][width];
+
+    public Cell[][] getCells() {
+        return cells;
+    }
+
+    public Coordinate getDim() {
+        return new Coordinate(height, width);
+
+    }
 
     public Field() {
         draw();
     }
 
-    protected void draw() {
-        for (int i = 0; i < WIDTH; ++i) {
-            for (int j = 0; j < HEIGHT; ++j) {
+    private void draw() {
+        for (int i = 0; i < HEIGHT; ++i) {
+            for (int j = 0; j < WIDTH; ++j) {
                 cells[i][j] = new Cell(new Coordinate(i, j));
             }
         }
     }
 
-    protected boolean isCellEmpty(Coordinate pos) {
+    public boolean isCellEmpty(Coordinate pos) {
         if (cells[pos.getI()][pos.getJ()].getFigure() == null) {
             return true;
         } else {

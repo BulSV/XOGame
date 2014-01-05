@@ -10,29 +10,28 @@ package com.XOGame;
 public class ConsoleField extends Field {
 
     public ConsoleField() {
-//        super.draw();
+        draw();
     }
 
     @Override
     public void reDraw() {
-        for (int i = 0; i < WIDTH; ++i) {
-            for (int j = 0; j < HEIGHT; ++j) {
+        for (int i = 0; i < getDim().getI(); ++i) {
+            for (int j = 0; j < getDim().getJ(); ++j) {
                 if (isCellEmpty(new Coordinate(i, j))) {
                     System.out.print("[ ]");
                 } else {
-                    cells[i][j].reDraw();
+                    getCells()[i][j].reDraw();
                 }
             }
             System.out.println();
         }
     }
 
-    @Override
-    protected void draw() {
-        super.draw();
+//    @Override
+    private void draw() {
         int pos = 1;
-        for (int i = 0; i < WIDTH; ++i) {
-            for (int j = 0; j < HEIGHT; ++j) {
+        for (int i = 0; i < getDim().getI(); ++i) {
+            for (int j = 0; j < getDim().getJ(); ++j) {
                 System.out.print("[" + pos++ + "]");
             }
             System.out.println();

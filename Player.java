@@ -33,11 +33,6 @@ public abstract class Player {
     }
 
     public void move(Coordinate stroke) throws InputCellBusyException {
-//        try {
         getField().setFigure(stroke, getFigure());
-//        } catch (InputCellBusyException e) {
-//            throw new InputCellBusyException(e.getMessage());
-//        }
-
     }
 }

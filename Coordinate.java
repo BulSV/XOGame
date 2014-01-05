@@ -10,11 +10,11 @@ package com.XOGame;
 public class Coordinate {
     private static final int I = 0;
     private static final int J = 0;
-    private int i;
-    private int j;
+    private int i = I;
+    private int j = J;
 
     public Coordinate() {
-        this(I, J);
+//        this(I, J);
     }
 
     public void setI (int i) {
