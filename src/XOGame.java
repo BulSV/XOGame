@@ -1,6 +1,4 @@
-package com.XOGame;
-
-import com.XOGame.exceptions.InputNameException;
+import XOGame.exceptions.InputNameException;
 
 /**
  * Created with IntelliJ IDEA.

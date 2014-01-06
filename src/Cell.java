@@ -1,5 +1,3 @@
-package com.XOGame;
-
 /**
  * Created with IntelliJ IDEA.
  * User: sergey

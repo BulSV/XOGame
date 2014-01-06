@@ -1,6 +1,4 @@
-package com.XOGame;
-
-import com.XOGame.exceptions.InputCellBusyException;
+import XOGame.exceptions.InputCellBusyException;
 
 /**
  * Created with IntelliJ IDEA.
