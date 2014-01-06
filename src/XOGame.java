@@ -1,4 +1,4 @@
-import XOGame.exceptions.InputNameException;
+import exceptions.InputNameException;
 
 /**
  * Created with IntelliJ IDEA.

@@ -1,4 +1,4 @@
-import XOGame.exceptions.InputCellRangeException;
+import exceptions.InputCellRangeException;
 
 /**
  * Created with IntelliJ IDEA.

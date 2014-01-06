@@ -1,4 +1,4 @@
-import XOGame.exceptions.InputCellBusyException;
+import exceptions.InputCellBusyException;
 
 /**
  * Created with IntelliJ IDEA.

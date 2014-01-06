@@ -1,6 +1,6 @@
-import XOGame.exceptions.InputCellBusyException;
-import XOGame.exceptions.InputCellRangeException;
-import XOGame.exceptions.InputNameException;
+import exceptions.InputCellBusyException;
+import exceptions.InputCellRangeException;
+import exceptions.InputNameException;
 
 import java.util.Scanner;
 
